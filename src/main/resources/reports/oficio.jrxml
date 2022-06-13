@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requisicones" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4271fdf6-3066-45d1-85ae-3f53ff0bc68a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<parameter name="logodes" class="java.lang.String"/>
+	<parameter name="logoidp" class="java.lang.String"/>
+	<parameter name="logoedo" class="java.lang.String"/>
+	<parameter name="footidp" class="java.lang.String"/>
+	<parameter name="qrCode" class="java.awt.Image"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<parameter name="background" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="leyenda" class="java.lang.String"/>
+	<field name="informar2" class="java.lang.String"/>
+	<field name="municipio" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="oficio" class="java.lang.String"/>
+	<field name="defensor" class="java.lang.String"/>
+	<field name="puesto" class="java.lang.String"/>
+	<field name="adscrito" class="java.lang.String"/>
+	<field name="residencia" class="java.lang.String"/>
+	<field name="peticionario" class="java.lang.String"/>
+	<field name="accion" class="java.lang.String"/>
+	<field name="continua" class="java.lang.String"/>
+	<field name="estudio" class="java.lang.String"/>
+	<field name="informar" class="java.lang.String"/>
+	<field name="fechaEstudio" class="java.lang.String"/>
+	<field name="fundamento" class="java.lang.String"/>
+	<field name="atentamente" class="java.lang.String"/>
+	<field name="director" class="java.lang.String"/>
+	<field name="asesor" class="java.lang.String"/>
+	<field name="otro" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="145" splitType="Stretch">
+			<image scaleImage="RealSize">
+				<reportElement x="50" y="0" width="480" height="52" isRemoveLineWhenBlank="true" uuid="e9ac3e44-6c5e-4d16-b665-9c494e2fcaef"/>
+				<imageExpression><![CDATA[$P{background}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="2" y="60" width="569" height="30" uuid="b6514789-3b03-46b8-b266-fe73494e99de"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{leyenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="90" width="200" height="50" uuid="76123486-ae01-420c-85d0-286a6beb0e02"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{municipio}+"\n"+$F{fecha}+"\n"+$F{oficio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="275" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="0" width="460" height="73" uuid="b45ceee7-013b-4dde-9fcb-54c093cac2e8"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{defensor}+"\n"+$F{puesto}+", "+$F{adscrito}+"\n"+$F{residencia}+"\nPRESENTE"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="58" y="89" width="460" height="40" uuid="7624d605-9efc-4929-bd52-00a5c89498e5"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{peticionario}+" "+$F{accion}+" "+$F{continua}+$F{estudio}+" "+$F{fechaEstudio}+$F{informar}+"<br><br>"+$F{fundamento}+"<br><br>"+$F{otro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="116">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="-1" y="18" width="568" height="50" uuid="ab874398-b538-4d78-b84c-5c80a0f866bb"/>
+				<textElement textAlignment="Center" markup="html">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>ATENTAMENTE</b><br>"+$F{atentamente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="81" width="565" height="30" uuid="73b54d09-5224-46c3-adaf-262fc0462c6e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{director}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="127">
+			<textField>
+				<reportElement x="0" y="70" width="277" height="30" uuid="61d9b686-9da9-4fa7-a07b-6c6bd6950a2f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Asesor: "+$F{asesor}+"\n C.C.P. Archivo"]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement x="0" y="0" width="569" height="44" uuid="43f9ddd3-3b5f-42d5-b639-c300caebb4a3"/>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"firmanteGypst.jasper"]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="494" y="44" width="67" height="64" uuid="d823314c-a2da-4505-b911-cac6ebfaa929"/>
+				<imageExpression><![CDATA[$P{qrCode}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

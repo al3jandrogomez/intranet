@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requisicones" printOrder="Horizontal" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="792" columnSpacing="612" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4271fdf6-3066-45d1-85ae-3f53ff0bc68a">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<property name="background.image.path" value="classpath:static/images/constancia.png"/>
+	<property name="background.image.x" value="10"/>
+	<property name="background.image.y" value="10"/>
+	<property name="background.image.widht" value="792"/>
+	<property name="background.image.height" value="612"/>
+	<property name="background.image.alpha" value="1.0"/>
+	<parameter name="background" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="institucion" class="java.lang.String"/>
+	<field name="participante" class="java.lang.String"/>
+	<field name="motivo" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<detail>
+		<band height="612">
+			<image>
+				<reportElement mode="Transparent" x="0" y="0" width="800" height="612" uuid="6d24181a-6444-4c3d-983c-7e45e55b8e5a"/>
+				<imageExpression><![CDATA[$P{background}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="280" width="792" height="90" forecolor="#5A5B5A" uuid="fc61ac93-c0a5-4f25-b771-6efef41afc1a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="HelveticaNeueLT Std Blk" size="32" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{participante}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

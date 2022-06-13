@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter_1" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="25" bottomMargin="15" uuid="5b4c1034-2ac0-4137-ac15-8082c9f104c8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="gafete" class="java.lang.String"/>
+	<parameter name="qr" class="java.lang.String"/>
+	<parameter name="director" class="java.lang.String"/>
+	<parameter name="logoidp" class="java.lang.String"/>
+	<parameter name="hints" class="java.util.HashMap"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreCompleto" class="java.lang.String"/>
+	<field name="cveServidor" class="java.lang.String"/>
+	<field name="vigencia" class="java.lang.String"/>
+	<field name="correos" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<field name="folio" class="java.lang.String"/>
+	<field name="director" class="java.lang.String"/>
+	<field name="rutaFotografia" class="java.lang.String"/>
+	<field name="id" class="java.lang.String"/>
+	<field name="tamaniofuente" class="java.lang.String"/>
+	<field name="size" class="java.lang.String"/>
+	<detail>
+		<band height="318" splitType="Stretch">
+			<image>
+				<reportElement x="202" y="75" width="195" height="189" uuid="3fc2fae8-c7af-4528-8d94-f9881db6f0d8"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode(
+$F{id},
+com.google.zxing.BarcodeFormat.QR_CODE, 400, 400,$P{hints}) )]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

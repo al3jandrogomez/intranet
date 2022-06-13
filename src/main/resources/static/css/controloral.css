@@ -1,0 +1,211 @@
+
+.root{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    font-size: 16px;
+    font-family: Helvetica;
+    overflow: hidden;
+
+}
+.form-register{
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+}
+.form-register1{
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 400px;
+}
+.progressbar{
+    display: flex;
+    list-style: none;
+    margin-bottom:  15px;
+    counter-reset: step;
+}
+.progressbar-option{
+    width: 100%;
+    text-align:  center;
+    font-size: .7rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.progressbar-option:before{
+    display: flex;
+    content: counter(step);
+    counter-increment: step;
+    width:20px;
+    height: 20px;
+    background-color: white;
+    margin: 0 auto 5px;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+
+}
+
+.progressbar-option:after{
+    display:block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top:10px;
+    left:-50%;
+    z-index:1;
+}
+
+.progressbar-option:first-child:after{
+    content: none;
+}
+.progressbar-option.active:before, 
+.progressbar-option.active:after{
+    background-color: #AAC135;
+}
+
+.form-register-title{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+
+}
+.form-register-body{
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.step{
+    background-color: white;
+    box-shadow: 5px 5px 5px 2px #222;
+    border-radius: 3px;
+    min-width: 100%;
+    opacity: 0;
+    transition: all .2s linear;
+
+
+}
+.opciones{
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.carpeta{
+    background-color: white;
+    box-shadow: 5px 5px 5px 2px #222;
+    border-radius: 3px;
+    min-width: 100%;
+    opacity: 0;
+    transition: all .2s linear;
+}
+.carpeta.active{
+    opacity: 1;
+    z-index: 1;
+    /*margin-left: -100%;*/
+
+}
+.step.active{
+    opacity: 1;
+}
+
+.step.to-left{
+    margin-left: -100%;
+
+}
+.step.inactive{
+    animation-name: scale;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}
+/*.carpeta.inactive{
+    animation-name: scale;
+    animation-duration: .2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+}*/
+@keyframes scale{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.1);
+    }
+
+}
+.step-header{
+    padding: 20px 15px ;
+    background-color:  #9D9999;
+    border-radius: 3px 3px 0 0; 
+
+}
+.step-title{
+    font-size: 1.1rem;
+    text-align: center;
+    color: white;
+
+}
+
+.step-body{
+    padding: 20px 15px 0;
+
+}
+.step-input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    clear:both;
+}
+.step-footer{
+    padding: 20px 15px;
+    text-align: center;
+}
+.step-button{
+    display: inline-block;
+    padding: 10px;
+    background-color:  #AAC135; 
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.icon-bar{
+    width:100%;
+    background-color:  #9D9999;
+    overflow: auto;
+}
+.icon-bar a{
+    float:left;
+    text-align: center;
+    width:33%;
+    color: white;
+    font-size: 19px;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+}
+.icon-bar a:hover{
+    background-color:  #ddd;
+
+
+}
+.icon-bar .active{
+    background-color: #AAC135;
+}
+
+.busquedacarpeta{
+    background-image: url("resources/images/fondo-sigedepu.png");
+}
+.registracarpeta{
+    background-image: url("resources/images/fondo-sigedepu.png");
+}

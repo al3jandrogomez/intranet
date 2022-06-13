@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_Letter_1" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="25" bottomMargin="15" uuid="5b4c1034-2ac0-4137-ac15-8082c9f104c8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="gafete" class="java.lang.String"/>
+	<parameter name="qr" class="java.lang.String"/>
+	<parameter name="director" class="java.lang.String"/>
+	<parameter name="logoidp" class="java.lang.String"/>
+	<parameter name="hints" class="java.util.HashMap"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreCompleto" class="java.lang.String"/>
+	<field name="cveServidor" class="java.lang.String"/>
+	<field name="vigencia" class="java.lang.String"/>
+	<field name="correos" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<field name="folio" class="java.lang.String"/>
+	<field name="director" class="java.lang.String"/>
+	<field name="rutaFotografia" class="java.lang.String"/>
+	<field name="id" class="java.lang.String"/>
+	<field name="tamaniofuente" class="java.lang.String"/>
+	<field name="size" class="java.lang.String"/>
+	<field name="sizeNombre" class="java.lang.String"/>
+	<detail>
+		<band height="318" splitType="Stretch">
+			<image hAlign="Center" vAlign="Top">
+				<reportElement x="50" y="-20" width="459" height="325" uuid="4503eb01-816c-48df-9163-560aecc6239c"/>
+				<imageExpression><![CDATA[$P{gafete}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="130" y="52" width="149" height="78" forecolor="#64656A" uuid="6a8c231e-40bf-4167-b2b0-f9618a60d715"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="HelveticaNeueLT Std Med" size="16.2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' size='"+$F{sizeNombre}+"' >" + $F{nombreCompleto} + "</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="138" width="160" height="30" forecolor="#64656A" uuid="c546d341-1076-41ce-9b3b-51b53021d371"/>
+				<textElement textAlignment="Center">
+					<font fontName="HelveticaNeueLT Std Med" size="16.31"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cveServidor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="157" width="100" height="20" forecolor="#64656A" uuid="959439a8-c8a3-4cce-b833-3f5f76ea3ed9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HelveticaNeueLT Std Med"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vigencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="196" width="260" height="40" forecolor="#64656A" uuid="20829d2b-3523-4053-bc97-7001696b4a97"/>
+				<textElement markup="html">
+					<font fontName="HelveticaNeueLT Std Med" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{correos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="250" width="229" height="43" forecolor="#FFFFFF" uuid="f482d1be-a237-410c-b1d3-806d9d7be764"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="HelveticaNeueLT Std Med" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style isBold='true' size='"+$F{size}+"' >" + $F{cargo} + "</style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="62" width="100" height="30" forecolor="#64656A" uuid="db5bbc7b-93e6-45f6-9849-f06b6b0615a6"/>
+				<textElement>
+					<font fontName="HelveticaNeueLT Std Med"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="334" y="80" width="109" height="106" uuid="3fc2fae8-c7af-4528-8d94-f9881db6f0d8"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+new com.google.zxing.qrcode.QRCodeWriter().encode(
+$F{id},
+com.google.zxing.BarcodeFormat.QR_CODE, 400, 400,$P{hints}) )]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="273" y="190" width="240" height="30" forecolor="#64656A" uuid="cccf5a01-b2a9-4d86-b2a1-451318fa0b3e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="HelveticaNeueLT Std" size="9.05"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{director}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="54" y="54" width="91" height="101" uuid="162342cf-be6a-4935-adbd-1ad9ba6b1683"/>
+				<imageExpression><![CDATA[$F{rutaFotografia}]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement mode="Transparent" x="364" y="111" width="47" height="35" uuid="d5bb0eb4-0bc8-4aaf-a2c4-52643339a1d7">
+					<property name="net.sf.jasperreports.allow.element.overlap" value="true"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logoidp}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>
