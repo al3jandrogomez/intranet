@@ -220,7 +220,7 @@ public class DocumentosFormulariosRestController {
     public ResponseEntity<?> ListaPendientes() throws ParseException {
         String mensaje = "";
         Informe i = new Informe();
-        i.setEstatusInforme("C");
+        i.setEstatusInforme("C.");
         i.setActivo("S");
          i.setCveMes(6);
         i.setAnio(2022);
