@@ -70,12 +70,9 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
 			<version>6.6.0</version>
+			
         </dependency>
-		<dependency>
-			<groupId>com.lowagie</groupId>
-			<artifactId>itext</artifactId>
-			<version>4.2.0</version>
-		  </dependency>
+		
 				  
 		  
 		<!-- CORREO ELECTRONICO -->
@@ -134,5 +131,6 @@
 			</plugin>
 		</plugins>
 	</build>
+	
 
 </project>
