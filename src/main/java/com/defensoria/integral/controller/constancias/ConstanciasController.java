@@ -32,7 +32,7 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
-import org.apache.commons.lang.CharEncoding;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -334,7 +334,7 @@ public class ConstanciasController {
                 Response response = new Response();
         
                 MimeMessage message = mailSender.createMimeMessage();
-                MimeMessageHelper helper = new MimeMessageHelper(message, true, CharEncoding.UTF_8);
+                MimeMessageHelper helper = new MimeMessageHelper(message, true);
               
               
         

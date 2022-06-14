@@ -8,7 +8,7 @@ package com.defensoria.integral.controller.sigedepu;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.apache.commons.lang.builder.ToStringBuilder;
+//import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Constants {
 
@@ -157,7 +157,7 @@ public class Constants {
         String className = Thread.currentThread().getStackTrace()[2].getClassName();
         System.out.println(className + ":" + lineNumber);
         if (object != null) {
-            System.out.println(ToStringBuilder.reflectionToString(object));
+        //    System.out.println(ToStringBuilder.reflectionToString(object));
         } else {
             System.out.println("Objeto Nulo");
         }
@@ -179,7 +179,7 @@ public class Constants {
             System.out.println(message);
         }
         if (object != null) {
-            System.out.println(ToStringBuilder.reflectionToString(object));
+         //   System.out.println(ToStringBuilder.reflectionToString(object));
         } else {
             System.out.println("Objeto Nulo");
         }
