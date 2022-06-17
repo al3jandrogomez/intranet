@@ -580,6 +580,8 @@ public class GafetesDocumentosController {
         params.put("logoidp", "classpath:/static/images/logoido2.png");
         params.put("reverso", "classpath:/static/images/reverso.png");
 
+        
+
         String documento = "gafetepvc";
         String classpath = "gafetepvc.jrxml";
 
